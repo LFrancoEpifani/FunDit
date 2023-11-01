@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import Flyer_4 from '../../assets/Flyer_4.jpg';
 import Flyer_3 from '../../assets/Flyer_3.jpg';
+import Flyer_2 from '../../assets/Flyer_2.jpg';
 
 export default function Card() {
 
     // Creamos un useState que contendrá un array con los indices de las tarjetas que se volteen
   const [flippedCards, setFlippedCards] = useState([]);
-
-
     // Definimos la función handleFlip que se encargará de manejar el efecto de volteo de tarjetas.
     // Toma como argumento el indice de la tarjeta
   const handleFlip = (index) => {
