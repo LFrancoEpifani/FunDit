@@ -55,8 +55,6 @@ cursor: pointer;
 
 .image-wrapper.rotated .image {
 transform: rotateY(180deg);
-opacity: 0.5;
-
 }
 
 
