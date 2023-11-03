@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
-import Card from '../Card/Card'
+import Card from '../Card/flippedCard'
+
 
 export default function BillBoard() {
   return (

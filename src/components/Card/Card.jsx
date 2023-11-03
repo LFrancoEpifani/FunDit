@@ -1,45 +1,37 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import Flyer_4 from '../../assets/Flyer_4.jpg';
-import Flyer_3 from '../../assets/Flyer_3.jpg';
-import Flyer_2 from '../../assets/Flyer_2.jpg';
 
 export default function Card() {
+  
+  const [isRotated, setIsRotated] = useState(false);
+  const [opacity, setOpacity] = useState(1);
 
-    // Creamos un useState que contendrá un array con los indices de las tarjetas que se volteen
-  const [flippedCards, setFlippedCards] = useState([]);
-    // Definimos la función handleFlip que se encargará de manejar el efecto de volteo de tarjetas.
-    // Toma como argumento el indice de la tarjeta
-  const handleFlip = (index) => {
-    // Verificamos si el índice ya está presente en el array flippedCards utilizando el método includes.
-    if (flippedCards.includes(index)) {
-        // Si está presente, singifica que se ha volteado, por lo que elimnamos del array el indice con el método filter.
-      setFlippedCards(flippedCards.filter((item) => item !== index));
-    } else {
-        // Esto permite alternar el estado de volteo
-      setFlippedCards([...flippedCards, index]);
-    }
-  };
-
+  const toggleImage = () => {
+    setIsRotated(!isRotated);
+    setOpacity(isRotated ? 1 : 0.5);
+  };
 
   return (
-    <div>
-        {[{imagen: Flyer_3, titulo: 'BASS PORT' }, {imagen: Flyer_4, titulo: 'HIPSTER BEACH'}].map((card, index) => {
 
-        <div key={index} className={`card my-6 p-4 ${flippedCards.includes(index) ? 'flipped' : 'unflipped'}`}>
-          <div className='position relative border-2 border-black'>
-            <img className='' src={card.imagen} alt="" />
-            <div className='bg-white opacity-70 border border-black rounded-full w-10 h-10 position absolute top-0 right-0 m-4 flex items-center justify-center'>
-              <button onClick={() => handleFlip()}>
-                <Icon className='switch text-2xl' icon="icon-park:switch" />
-              </button>
+      <div className={`w-full relative bg-black transition duration-1000 ${isRotated ? 'bg-opacity-100' : 'bg-opacity-0'}`}>
+      <div
+        className={`image-wrapper  ${isRotated ? 'rotated ' : ''}`}
+        onClick={toggleImage}
+      >
+        <div className="image bg-black" style={{ opacity }}>
+          <img
+            src={Flyer_4}
+            alt="Imagen"
+            className="w-full h-full"
+          />
+           {isRotated && (
+            <div className=''>
+              <h1 className=""></h1>
             </div>
-          </div>
-          <div className={` bg-black p-4 relative ${flippedCards.includes(index) ? 'back' : ''}`}>
-            <h2 className='flyer_tittle text-center text-white text-lg'>{card.titulo}</h2>
-          </div>
+          )}
         </div>
-      })}
+      </div>
     </div>
   );
 }

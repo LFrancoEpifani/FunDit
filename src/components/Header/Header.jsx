@@ -1,7 +1,8 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
 import Main from '../Main/Main'
-import BillBoard from '../BillBoard/BillBoard'
+
+
 
 
 export default  function Header() {
@@ -11,9 +12,6 @@ export default  function Header() {
         <NavBar/>
         <Main/>
     </div>
-    <main>
-      <BillBoard/>
-    </main>
     </>
   )
 }
