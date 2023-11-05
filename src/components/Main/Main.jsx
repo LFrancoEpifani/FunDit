@@ -4,7 +4,7 @@ import Music from '../../assets/teatro.jpg';
 import artShow from '../../assets/microfono.jpg';
 
 export default function Main() {
-  const slides = [Festival, Music, artShow];
+  const slides = [artShow, Music, Festival];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
@@ -25,7 +25,7 @@ export default function Main() {
       <div
         ref={sliderRef}
         onTouchStart={handleTouchStart}
-        className="w-full h-full bg-cover bg-center duration-500"
+        className="w-full h-full bg-cover bg-center transition duration-500"
         style={{
           display: 'flex',
           justifyContent: 'center',
