@@ -16,6 +16,7 @@
     "react-card-flip": "^1.2.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
+    "react-transition-group": "^4.4.5",
     "slider": "^1.0.4"
   },
   "devDependencies": {
