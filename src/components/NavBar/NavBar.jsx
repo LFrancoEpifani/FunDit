@@ -16,16 +16,16 @@ export default function NavBar() {
 
   return (
     <div className='bg-black w-full'>
-      <nav className= 'p-3 navbar flex items-center justify-between'>
+      <nav className= 'p-3 navbar flex items-center justify-around'>
         <Icon onClick={toggleMenu}
           className='text-2xl'
           icon='material-symbols:menu'
           color='white'
         />
 
-        <img className='w-22 h-8' src={Logo} alt='FunDit Logo' />
+        <img className='w-18 h-6' src={Logo} alt='FunDit Logo' />
         <input
-          className='rounded-md border border-black bg-white'
+          className='rounded-md border border-black bg-white w-40 h-7'
           type='text'
           placeholder='Buscar...'
         />
