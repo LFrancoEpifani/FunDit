@@ -3,44 +3,33 @@ import Festival from '../../assets/artFestival.jpeg';
 import Music from '../../assets/teatro.jpg';
 import artShow from '../../assets/microfono.jpg';
 
-
-
 export default function Main() {
   const photos = [artShow, Music, Festival];
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
 
   const nextSlide = () => {
-    if (currentIndex < photos.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-    }
+    setCurrentIndex((prevIndex) => (prevIndex === photos.length - 1 ? 0 : prevIndex + 1));
   };
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentIndex]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="w-full m-auto relative">
-      <div
-        ref={sliderRef}
-        className="h-screen relative"
-        style={{ overflow: 'hidden' }}
-      >
+    <div className="w-full m-auto relative overflow-hidden">
+      <div ref={sliderRef} className="h-screen relative">
         {photos.map((slide, index) => (
           <div
             key={index}
-            className={`absolute w-full h-full ${
-              currentIndex === index ? 'opacity-100' : 'opacity-0'
-            } transition-opacity duration-1000 ease-in-out`}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
+              currentIndex === index ? 'opacity-100 scale-105' : 'opacity-0 scale-90'
+            }`}
           >
-            <img src={slide} alt={`Slide ${index + 1}`} className="main-img w-full h-full"/>
+            <img src={slide} alt={`Slide ${index + 1}`} className="w-full h-full"/>
+            {/* Optional overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-25"></div>
           </div>
         ))}
       </div>

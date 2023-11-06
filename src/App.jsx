@@ -1,13 +1,19 @@
 import Header from './components/Header/Header'
 import BillBoard from './components/BillBoard/BillBoard'
+import Main from './components/Main/Main'
 
 export default function App() {
 
   return (
-    <div>
+   <div>
+     <div>
       <Header/>
-      <BillBoard/>
     </div>
+    <div>
+      <Main/>
+       <BillBoard/>
+    </div>
+   </div>
   )
 }
 
