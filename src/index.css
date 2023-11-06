@@ -77,3 +77,11 @@ input::placeholder{
     transform: rotateY(180deg);
 }
 
+
+
+.main-img{
+    border-radius: 5px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}

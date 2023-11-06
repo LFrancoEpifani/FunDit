@@ -16,9 +16,9 @@ export default function NavBar() {
 
   return (
     <div className='bg-black w-full'>
-      <nav className= 'p-3 navbar flex items-center justify-around'>
+      <nav className= 'p-3 navbar flex items-center justify-around '>
         <Icon onClick={toggleMenu}
-          className='text-2xl'
+          className='text-2xl '
           icon='material-symbols:menu'
           color='white'
         />
@@ -34,7 +34,7 @@ export default function NavBar() {
         </div>
       </nav>
 
-      {isOpen && <BurgerContent className="" onClose={closeMenu} />}
+      {isOpen && <BurgerContent className="transition-all duration-500 ease-in" onClose={closeMenu} />}
     </div>
   );
 }
