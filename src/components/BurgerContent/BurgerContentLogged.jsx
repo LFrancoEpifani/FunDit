@@ -24,59 +24,36 @@ export default function BurgerContentLogged({ isOpen, openModal, onClose }) {
   modalVisible ? 'bg-opacity-30 w-full' : ''
 } bg-white h-screen fixed top-0 left-0`}>
         {modalVisible && <UploadModal closeModal={closeModal} />}
-        <div>
-          <Icon onClick={onClose} className='text-4xl ml-auto my-1 mr-1' icon='iconamoon:close-thin' />
+        <div className=''>
+          <Icon onClick={onClose} className='text-4xl ml-auto my-1 mr-1 bg-black rounded-full ' icon='iconamoon:close-thin' color='white'/>
         </div>
-        <div className='px-2 pb-4 flex items-end gap-2'>
-          <img className='object-cover border-black rounded-full w-12 h-12' src={profile} alt="" />
-          <h2 className='font-bold text-sm'>Luciano Epifani</h2>
+        <div className='flex items-center p-2 gap-2 m-4'>
+          <img className='object-cover border-2 border-white rounded-full w-12 h-12 ' src={profile} alt="" />
+          <h2 className='font-bold text-lg'>Luciano Epifani</h2>
         </div>
-        <div className='sections'>
-          <div className='flex items-center gap-6 mb-4 '>
-            <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 43 37" fill="none">
-                <path d="M22.3772 0.303791C22.1229 0.106917 21.8096 0 21.4871 0C21.1646 0 20.8513 0.106917 20.597 0.303791L0 16.2497L1.78163 18.4868L4.3 16.5372V34.1538C4.30152 34.9082 4.60402 35.6313 5.1413 36.1647C5.67858 36.6981 6.40684 36.9985 7.16667 37H35.8333C36.5932 36.9985 37.3214 36.6981 37.8587 36.1647C38.396 35.6313 38.6985 34.9082 38.7 34.1538V16.55L41.2184 18.4996L43 16.2625L22.3772 0.303791ZM24.3667 34.1538H18.6333V22.7689H24.3667V34.1538ZM27.2333 34.1538V22.7689C27.2326 22.0143 26.9303 21.2908 26.3929 20.7572C25.8554 20.2236 25.1267 19.9235 24.3667 19.9227H18.6333C17.8733 19.9235 17.1446 20.2236 16.6071 20.7572C16.0697 21.2908 15.7674 22.0143 15.7667 22.7689V34.1538H7.16667V14.3185L21.5 3.23254L35.8333 14.3328V34.1538H27.2333Z" fill="white" />
-              </svg>
-            </div>
-            <button>
-              Inicio
+        <div className='px-4 py-2'>
+          {[
+            { icon: 'mdi:home-outline', text: 'Inicio' },
+            { icon: 'mdi:calendar', text: 'Eventos' },
+            { icon: 'mdi:ticket-outline', text: 'Entradas' },
+            { icon: 'ic:outline-plus', text: 'Publicación', action: handlePublication },
+            { icon: 'ri:user-line', text: 'Perfil' },
+            { icon: 'material-symbols:login-sharp', text: 'Cerrar sesión' },
+          ].map((item, index) => (
+            <button
+              key={index}
+              className='text-xl flex items-center w-full gap-4 p-3 rounded-lg hover:bg-gray-100 transition-colors my-1'
+              onClick={item.action}
+            >
+              <div className='bg-black rounded-full w-10 h-10 flex justify-center items-center'>
+                <Icon className='text-2xl' icon={item.icon} color='white' />
+              </div>
+              <span className='font-semibold'>{item.text}</span>
             </button>
-          </div>
-          <div className='flex items-center gap-6 mb-4'>
-            <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>
-              <Icon className='text-2xl' icon="mdi:events" color='white' />
-            </div>
-            <button>Eventos</button>
-          </div>
-          <div className='flex items-center gap-6 mb-4'>
-            <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>
-              <Icon className='text-2xl' icon="mdi:ticket-outline" color='white' />
-            </div>
-            <button>Entradas</button>
-          </div>
-          <div className='flex items-center gap-6 mb-4'>
-            <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>
-              <Icon className='text-3xl' icon="ic:outline-plus" color='white' />
-            </div>
-            <button onClick={handlePublication}>Publicación</button>
-          </div>
-          <div className='flex items-center gap-6 mb-4'>
-            <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>
-              <Icon className='text-xl' icon="ri:user-line" color='white' />
-            </div>
-            <button>Perfil</button>
-          </div>
-          <div className='flex items-center gap-6 mb-4'>
-            <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>
-              <Icon className='text-2xl' icon="material-symbols:login-sharp" color='white' />
-            </div>
-            <button>Cerrar sesión</button>
-          </div>
+          ))}
         </div>
       </div>
-      {isOpen &&
-        <UploadModal closeModal={closeModal} />
-      }
+      {modalVisible && <UploadModal closeModal={closeModal} />}
     </div>
   );
 }

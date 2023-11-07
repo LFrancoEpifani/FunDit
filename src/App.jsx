@@ -8,9 +8,9 @@ export default function App() {
    <div>
      <div>
       <Header/>
+      <Main/>
     </div>
     <div>
-      <Main/>
        <BillBoard/>
     </div>
    </div>

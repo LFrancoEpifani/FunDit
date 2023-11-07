@@ -12,10 +12,10 @@ export default function NavBar() {
 
   return (
     // The bg-opacity-80 class applies opacity to the background color only
-    <div className='bg-black bg-opacity-90 w-full'>
+    <div className='bg-black w-full'>
       {/* Add additional padding and container to center navbar content */}
-      <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
-        <nav className='p-3 navbar flex items-center justify-around '>
+      <div className='sm:7xl mx-auto px-2 sm:px-6 lg:px-8'>
+        <nav className='p-3 navbar flex items-center justify-around  '>
           <Icon
             onClick={toggleMenu}
             className='text-2xl '
