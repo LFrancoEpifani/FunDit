@@ -9,9 +9,9 @@ export default function BillBoard() {
         <h2 className='cartelera text-2xl my-6 text-center tracking-tight'>Cartelera</h2>
 
         {/* Search and Filter Bar */}
-        <div className='flex justify-between items-center bg-gradient-to-r from-gray-700 to-gray-900 p-4 rounded-lg mx-4 shadow-lg'>
+        <div className='flex justify-around items-center bg-gradient-to-r from-gray-700 to-gray-900 p-4 rounded-lg  shadow-lg'>
             <input
-              className='flex-grow h-8 p-2 mx-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent'
+              className='h-8 mx-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent'
               type="text"
               placeholder='Buscar en la cartelera...'
             />

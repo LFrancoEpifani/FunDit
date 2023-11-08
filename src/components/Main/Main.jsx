@@ -23,11 +23,11 @@ export default function Main() {
         {photos.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
+            className={`absolute transition-all duration-2000 ease-in-out transform ${
               currentIndex === index ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img src={slide} alt={`Slide ${index + 1}`} className="w-full h-90v object-cover"/>
+            <img src={slide} alt={`Slide ${index + 1}`} className="w-full h-screen object-cover"/>
             {/* Optional overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-20"></div>
           </div>
