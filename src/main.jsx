@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Auth0Provider 
       domain="fundit.eu.auth0.com" // String literals need to be in quotes
       clientId="ne8NdU01G2ewPJQnAPECIszMUk9e7mlJ" // String literals need to be in quotes
-      redirectUri={window.location.origin}
+      redirectUri={window.location.origin + '/FunDit/'}
     >
       <App />
     </Auth0Provider>
