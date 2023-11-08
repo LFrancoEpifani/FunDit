@@ -6,7 +6,7 @@ export default function UploadModal({ closeModal }) {
     // Overlay container with a slight dark background
     <div className='w-full h-full p-4 flex justify-center items-center'>
       {/* Modal container with a subtle shadow and rounded corners */}
-      <div className='shadow-lg rounded-lg mx-auto p-6 max-w-md sm:max-w-lg'>
+      <div className='rounded-lg mx-auto p-6 max-w-md sm:max-w-lg'>
         
         {/* Modal header with a subtle gradient and padding */}
         <div className='flex justify-between items-center bg-gray-200 p-4 rounded-t-lg'>
