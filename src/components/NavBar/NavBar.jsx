@@ -18,7 +18,7 @@ export default function NavBar() {
   return (
     <div className='bg-black w-full'>
       <div className='sm:7xl mx-auto px-2 sm:px-6 lg:px-8'>
-        <nav className='p-3 navbar flex items-center justify-around'>
+        <nav className='p-4 navbar flex items-center justify-between'>
           <Icon
             onClick={toggleMenu}
             className='text-2xl '

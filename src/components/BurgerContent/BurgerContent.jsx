@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 
 
-export default function BurgerContent({onClose}) {
+export default function BurgerContentLogged({ onClose }) {
 
   return (
     <div className='bg-opacity-60 bg-black fixed top-0 left-0 h-screen w-screen flex justify-center items-center z-50 cursor-pointer'>

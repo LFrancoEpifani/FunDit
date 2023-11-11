@@ -1,7 +1,14 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 
-export default function UploadModal({ closeModal }) {
+export default function UploadModal({ closeModal  }) {
+
+  const [nextModal, setNextModal] = useState(false);
+
+  const changeModal = () =>{
+    setNextModal(!nextModal)
+  }
+
   return (
     // Overlay container with a slight dark background
     <div className='w-full h-full p-4 flex justify-center items-center'>
@@ -17,7 +24,7 @@ export default function UploadModal({ closeModal }) {
             <Icon icon="iconamoon:close-bold" />
           </button>
           <h2 className='text-blakc text-lg font-bold'>Crear evento</h2>
-          <button className='text-blakc text-lg'>
+          <button className='text-blakc text-lg' onClick={changeModal}>
             <Icon icon='eva:arrow-ios-forward-fill' />
           </button>
         </div>
